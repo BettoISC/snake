@@ -1,13 +1,4 @@
-require 'ruby2d'
+require_relative "presentation/window"
 
-# Set the window size
-set width: 300, height: 200
-
-# Create a new shape
-s = Square.new
-
-# Give it some color
-s.color = 'red'
-
-# Show the window
-show
+app = SnakeAppWindow.new("Snake", 800, 600)
+app.start()
