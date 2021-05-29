@@ -1,4 +1,7 @@
+require_relative "controller/state"
 require_relative "presentation/window"
 
-app = SnakeAppWindow.new("Snake", 800, 600)
+
+initial_state = State::get_state()
+app = SnakeAppWindow.new(initial_state, "Snake", 20)
 app.start()
