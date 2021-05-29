@@ -10,8 +10,8 @@ class SnakeAppWindow
     
     def start        
         _set_window() 
-        _start_main_loop()       
-        _show_window()
+        _start_main_loop() 
+        _show_window()                    
     end
 
     private
@@ -23,11 +23,11 @@ class SnakeAppWindow
     def _show_window
         @main_window.show
     end
-
-    def _start_main_loop        
+    
+    def _start_main_loop                        
         @main_window.update do             
             @state.draw()
-        end
+        end        
     end
     
 end
