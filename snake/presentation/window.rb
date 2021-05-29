@@ -4,7 +4,6 @@ class SnakeAppWindow
 
     def initialize(state, title)
         @state = state
-        @ratio = ratio
         @title = title
         @main_window = Window       
     end
