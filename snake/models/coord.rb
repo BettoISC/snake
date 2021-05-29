@@ -1,5 +1,5 @@
 module Model
-    class Coord < Struct.new(row, col)
+    class Coord < Struct.new(:x, :y)
         
     end
 end
