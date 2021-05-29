@@ -8,8 +8,8 @@ module State
     
     def self.get_state
         State::Game.new(
-            Model::Grid.new(width: 800, height: 600),
-            Model::Food.new(Model::Coord.new(20, 20)),
+            Model::Grid.new(40, 30, 20),
+            Model::Food.new(20, 20),
             Model::Snake.new([Model::Coord.new(1, 0), Model::Coord.new(0, 0)])
         )        
     end

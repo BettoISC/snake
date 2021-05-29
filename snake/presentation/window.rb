@@ -2,7 +2,7 @@ require 'ruby2d'
 
 class SnakeAppWindow
 
-    def initialize(state, title, pixel_ratio)
+    def initialize(state, title)
         @state = state
         @ratio = ratio
         @title = title
@@ -18,7 +18,7 @@ class SnakeAppWindow
     private
 
     def _set_window
-        @main_window.set({:title => @title, :width => @state.grid.width, :height => @state.grid.height})                        
+        @main_window.set({:title => @title, :width => @state.grid.width * @state.grid.ratio, :height => @state.grid.height * @state.grid.ratio})                        
     end
     
     def _show_window
