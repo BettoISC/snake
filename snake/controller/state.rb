@@ -1,8 +1,10 @@
 require_relative '../models/models'
 module State
     class Game < Struct.new(:grid, :food, :snake)
-        def draw
-                        
+
+        def draw            
+            food.draw(self)
+            snake.draw(self)                        
         end
     end
     

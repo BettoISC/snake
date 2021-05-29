@@ -3,7 +3,7 @@ require 'ruby2d'
 class SnakeAppWindow
 
     def initialize(state, title)
-        @state = state
+        @state = state        
         @title = title
         @main_window = Window       
     end
@@ -16,7 +16,7 @@ class SnakeAppWindow
 
     private
 
-    def _set_window
+    def _set_window        
         @main_window.set({:title => @title, :width => @state.grid.width * @state.grid.ratio, :height => @state.grid.height * @state.grid.ratio})                        
     end
     
@@ -24,12 +24,9 @@ class SnakeAppWindow
         @main_window.show
     end
 
-    def _start_main_loop
-        s = Square.new(x: 50, y: 50, size: @ratio, color: 'blue')   
-        s.add         
-        @main_window.update do 
-            s.x += 1
-            s.y += 1
+    def _start_main_loop        
+        @main_window.update do             
+            @state.draw()
         end
     end
     
