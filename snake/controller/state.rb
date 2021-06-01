@@ -8,9 +8,9 @@ module State
             super(grid, food, snake)
         end
 
-        def draw            
+        def draw                                                          
             food.draw(self) 
-            snake.draw(self)                                   
+            snake.draw(self)
         end
 
         def key_pressed(key)
@@ -21,24 +21,27 @@ module State
         end
 
         def valid?
-            any_food?()
             if !inside_frame? or snake.eat_itself?
                 self.valid = false
             end
             return self.valid
-        end        
+        end 
+        
+        def check_for_food()
+            any_food?()            
+        end
 
         private
         def any_food?
             new_coord = snake.get_next_coord()
             if new_coord.eq?(food) 
                snake.grow_up(food)
-               food.realocate(grid)                        
+               food.realocate(grid)                                   
             end
         end
         def inside_frame?
             head=snake.get_head()
-            return (grid.width >= head.x and head.x >= 0 and head.y >= 0 and head.y <= grid.height)
+            return (grid.width > head.x and head.x >= 0 and head.y >= 0 and head.y < grid.height)
         end
 
         def valid_direction?(key)

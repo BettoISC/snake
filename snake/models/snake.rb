@@ -31,8 +31,10 @@ module Model
             return  self.coords[1..-1].include?(get_head())           
         end
 
-        def grow_up(food)            
-            self.append_to_body(food.clone())
+        def grow_up(food)
+            part = food.clone()
+            part.set_color("red")                     
+            self.append_to_body(part)
         end
 
         

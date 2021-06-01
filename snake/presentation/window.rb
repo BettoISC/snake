@@ -30,7 +30,8 @@ class SnakeAppWindow
             if !@state.valid?
                 puts "close!!!"
                 @main_window.close()
-            end             
+            end 
+            @state.check_for_food()            
             @state.draw()
             sleep 0.1
         end        
