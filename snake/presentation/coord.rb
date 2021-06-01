@@ -23,5 +23,8 @@ module Model
             @fig.color = new_color
         end
 
+        def eq?(coord)            
+            self.x == coord.x and self.y == coord.y
+        end
     end
 end

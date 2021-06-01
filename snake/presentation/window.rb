@@ -10,6 +10,7 @@ class SnakeAppWindow
     
     def start        
         _set_window() 
+        _start_envent_listener()
         _start_main_loop() 
         _show_window()                    
     end
@@ -25,9 +26,19 @@ class SnakeAppWindow
     end
     
     def _start_main_loop                        
-        @main_window.update do             
+        @main_window.update do
+            if !@state.valid?
+                puts "close!!!"
+                @main_window.close()
+            end             
             @state.draw()
+            sleep 0.1
         end        
     end
     
+    def _start_envent_listener
+        @main_window.on :key_down do |key|
+            @state.key_pressed(key)
+        end        
+    end
 end
